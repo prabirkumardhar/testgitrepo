@@ -1,0 +1,223 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Wclx2CGeFRqXpIW-gt-1814545-2022-08-25T01:38:23.781Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_STRAIGHT_LOAD</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description>tf_STRAIGHT_LOAD</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>prabirkumardhar2</types1:CreatedBy>
+      <types1:CreationDate>2022-08-25T01:38:24Z</types1:CreationDate>
+      <types1:ModifiedBy>prabirkumardhar2</types1:ModifiedBy>
+      <types1:ModificationDate>2023-03-01T20:11:13Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_STRAIGHT_LOAD"
+                   name="tf_STRAIGHT_LOAD"
+                   overrideAPIName="true">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>tf_STRAIGHT_LOAD</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="DT_mct_DEPARTMENTS_LOAD" type="reference">
+                  <options>
+                     <option name="failOnNotRun">true</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:mct-DEPARTMENTS-LOAD</option>
+                  </options>
+               </field>
+               <field description="" name="DT_mct_EMPLOYEE_LOAD" type="reference">
+                  <options>
+                     <option name="failOnNotRun">true</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:mct-EMPLOYEE-LOAD</option>
+                  </options>
+               </field>
+               <field description="" name="VAR_TEMP" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>prabirkumardhar2</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="l78dkekx" targetId="l78dken7"/>
+               </start>
+               <eventContainer id="l78dken7">
+                  <service id="l78dkekw">
+                     <title>DT_mct_DEPARTMENTS_LOAD</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_DEPARTMENTS_LOAD</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">hJohMRNVEWuiiWo1153FE3</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-DEPARTMENTS-LOAD">temp.DT_mct_DEPARTMENTS_LOAD</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.DT_mct_DEPARTMENTS_LOAD/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.DT_mct_DEPARTMENTS_LOAD/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.DT_mct_DEPARTMENTS_LOAD/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.DT_mct_DEPARTMENTS_LOAD/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.DT_mct_DEPARTMENTS_LOAD/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.DT_mct_DEPARTMENTS_LOAD/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.DT_mct_DEPARTMENTS_LOAD/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.DT_mct_DEPARTMENTS_LOAD/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.DT_mct_DEPARTMENTS_LOAD/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.DT_mct_DEPARTMENTS_LOAD/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.DT_mct_DEPARTMENTS_LOAD/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.DT_mct_DEPARTMENTS_LOAD/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.DT_mct_DEPARTMENTS_LOAD/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.DT_mct_DEPARTMENTS_LOAD/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="lengolzl" targetId="l78dkelp"/>
+                  <events>
+                     <catch faultField="temp.DT_mct_DEPARTMENTS_LOAD/fault"
+                            id="l78dken5"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.DT_mct_DEPARTMENTS_LOAD/fault"
+                            id="l78dken6"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="l78dkelp">
+                  <service id="l78dkel2">
+                     <title>DT_mct_EMPLOYEE_LOAD</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_EMPLOYEE_LOAD</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">2ixSn9UdlGyihayuYOwggb</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-EMPLOYEE-LOAD">temp.DT_mct_EMPLOYEE_LOAD</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.DT_mct_EMPLOYEE_LOAD/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.DT_mct_EMPLOYEE_LOAD/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.DT_mct_EMPLOYEE_LOAD/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.DT_mct_EMPLOYEE_LOAD/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.DT_mct_EMPLOYEE_LOAD/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.DT_mct_EMPLOYEE_LOAD/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.DT_mct_EMPLOYEE_LOAD/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.DT_mct_EMPLOYEE_LOAD/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.DT_mct_EMPLOYEE_LOAD/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.DT_mct_EMPLOYEE_LOAD/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.DT_mct_EMPLOYEE_LOAD/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.DT_mct_EMPLOYEE_LOAD/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.DT_mct_EMPLOYEE_LOAD/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.DT_mct_EMPLOYEE_LOAD/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="l78dkel4" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.DT_mct_EMPLOYEE_LOAD/fault"
+                            id="l78dkeln"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.DT_mct_EMPLOYEE_LOAD/fault"
+                            id="l78dkelo"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-DEPARTMENTS-LOAD"
+                              isByCopy="true"
+                              name="mct-DEPARTMENTS-LOAD">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-EMPLOYEE-LOAD"
+                              isByCopy="true"
+                              name="mct-EMPLOYEE-LOAD">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>9DYyPoDRFSKh1gvECaCrG2</types1:GUID>
+      <types1:DisplayName>tf_STRAIGHT_LOAD</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-03-22T20:50:56.618Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

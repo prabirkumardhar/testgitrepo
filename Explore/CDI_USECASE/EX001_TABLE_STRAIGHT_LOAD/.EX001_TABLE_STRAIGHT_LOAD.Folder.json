@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "8e15ogodD83b8cG1WIB3ep",
+    "name" : "EX001_TABLE_STRAIGHT_LOAD",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "EX001_TABLE_STRAIGHT_LOAD",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

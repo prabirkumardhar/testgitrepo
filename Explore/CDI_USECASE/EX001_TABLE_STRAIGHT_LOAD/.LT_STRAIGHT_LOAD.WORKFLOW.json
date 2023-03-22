@@ -1,0 +1,73 @@
+{
+  "objectInfo" : {
+    "id" : "bv7duuKaVqthMdn1nVHgif",
+    "name" : "LT_STRAIGHT_LOAD",
+    "type" : "WORKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01347Y0N000000000005"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "LT_STRAIGHT_LOAD",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "hJohMRNVEWuiiWo1153FE3",
+    "name" : "mct_DEPARTMENTS_LOAD",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01347Y0Z00000000002V"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "mct_DEPARTMENTS_LOAD",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI_USECASE/EX001_TABLE_STRAIGHT_LOAD"
+  }, {
+    "id" : "2ixSn9UdlGyihayuYOwggb",
+    "name" : "mct_EMPLOYEE_LOAD",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01347Y0Z00000000002G"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "mct_EMPLOYEE_LOAD",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI_USECASE/EX001_TABLE_STRAIGHT_LOAD"
+  } ]
+}
