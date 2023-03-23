@@ -44,6 +44,26 @@
     },
     "path" : "/Explore/CDI_USECASE/EX001_TABLE_STRAIGHT_LOAD"
   }, {
+    "id" : "a3AHy5mzfjvjOi4JiIvV22",
+    "name" : "edx",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01347Y25000000000007"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
     "id" : "2ixSn9UdlGyihayuYOwggb",
     "name" : "mct_EMPLOYEE_LOAD",
     "type" : "MTT",

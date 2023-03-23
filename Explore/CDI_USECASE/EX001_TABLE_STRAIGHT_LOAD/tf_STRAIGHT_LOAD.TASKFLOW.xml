@@ -13,7 +13,7 @@
       <types1:CreatedBy>prabirkumardhar2</types1:CreatedBy>
       <types1:CreationDate>2022-08-25T01:38:24Z</types1:CreationDate>
       <types1:ModifiedBy>prabirkumardhar2</types1:ModifiedBy>
-      <types1:ModificationDate>2023-03-01T20:11:13Z</types1:ModificationDate>
+      <types1:ModificationDate>2023-03-23T20:58:34Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -46,6 +46,13 @@
                <field description="" name="VAR_TEMP" type="string">
                   <options>
                      <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 1" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
                   </options>
                </field>
             </tempFields>
@@ -99,7 +106,7 @@
                         <operation source="field" to="temp.DT_mct_DEPARTMENTS_LOAD/output/FirstErrorCode">First Error Code</operation>
                      </serviceOutput>
                   </service>
-                  <link id="lengolzl" targetId="l78dkelp"/>
+                  <link id="lfllgz8b" targetId="lfllgz95"/>
                   <events>
                      <catch faultField="temp.DT_mct_DEPARTMENTS_LOAD/fault"
                             id="l78dken5"
@@ -111,6 +118,48 @@
                             id="l78dken6"
                             interrupting="true"
                             name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="lfllgz95">
+                  <service id="lfllgz8a">
+                     <title>Command Task 1</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">Command Task 1</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">01347Y25000000000007:edx</parameter>
+                        <parameter name="Script Name" source="constant"/>
+                        <parameter name="Input Arguments" source="constant"/>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">a3AHy5mzfjvjOi4JiIvV22</parameter>
+                        <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="INFA-commandTask">temp.Command Task 1</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">sleep 50</operation>
+                           <operation source="constant"
+                                      to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Command Task 1/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Command Task 1/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Command Task 1/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Command Task 1/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.Command Task 1/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.Command Task 1/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="lfllgz8c" targetId="l78dkelp"/>
+                  <events>
+                     <catch faultField="temp.Command Task 1/fault"
+                            id="lfllgz94"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
                   </events>
                </eventContainer>
                <eventContainer id="l78dkelp">
@@ -213,11 +262,30 @@
                             type="reference"/>
                   </detail>
                </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
             </dependencies>
          </taskflow>
       </types1:Entry>
       <types1:GUID>9DYyPoDRFSKh1gvECaCrG2</types1:GUID>
       <types1:DisplayName>tf_STRAIGHT_LOAD</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-03-22T20:50:56.618Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-03-23T20:59:20.503Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
